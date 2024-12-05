@@ -1,0 +1,30 @@
+//cuerpo general de la pagina
+
+ion-toolbar {
+    --background: #a8a8a8;
+    --color: #000000;
+  }
+  
+    ion-content {
+       --background: #d8d4d4;
+      }
+  
+    //seccion recuperar contraseña
+    .img-recuperarContra {
+      width: 70%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }  
+    
+    ion-item {
+      --background: #cccccc;
+      --color: #000000;
+    }
+
+    ion-button {
+      --background: #007bff; 
+      --color: #ffffff; 
+      border-radius: 20px; 
+      transition: background-color 0.3s ease; 
+    }
+  

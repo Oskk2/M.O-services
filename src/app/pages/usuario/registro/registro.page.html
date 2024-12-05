@@ -1,0 +1,70 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="logo-registro">
+    <img src="assets/img/logoRegistro.png" alt="Logo"/>
+  </div>
+  <form (ngSubmit)="registrar()">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <hr>
+      <ion-input [(ngModel)]="nombre_usuario" name="nombre_usuario" required placeholder="Ingrese su nombre"></ion-input>
+    </ion-item>
+    <div *ngIf="errorNombre" style="color:red; font-size:12px;">{{ errorNombre }}</div>
+
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <hr>
+      <ion-input [(ngModel)]="apellido_usuario" name="apellido_usuario" required placeholder="Ingrese su apellido"></ion-input>
+    </ion-item>
+    <div *ngIf="errorApellido" style="color:red; font-size:12px;">{{ errorApellido }}</div>
+
+    <ion-item>
+      <ion-label position="floating">Correo Electrónico</ion-label>
+      <hr>
+      <ion-input type="correo" [(ngModel)]="correo" name="correo" required placeholder="Ingrese su correo"></ion-input>
+    </ion-item>
+    <div *ngIf="errorCorreo" style="color:red; font-size:12px;">{{ errorCorreo }}</div>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <hr>
+      <ion-input [type]="mostrarContra ? 'text' : 'password'" [(ngModel)]="contrasena" name="contrasena" required placeholder="Ingrese su contraseña">
+        <ion-button
+            fill="clear"
+            slot="end"
+            (click)="toggleMostrarContra()"
+          >
+            <ion-icon
+              [name]="mostrarContra ? 'eye-off' : 'eye'"
+            ></ion-icon>
+          </ion-button>
+      </ion-input>
+    </ion-item>
+    <div *ngIf="errorContra" style="color:red; font-size:12px;">{{ errorContra }}</div>
+
+    <ion-item>
+      <ion-label position="floating">Confirmar Contraseña</ion-label>
+      <hr>
+      <ion-input [type]="mostrarConfirmarContra ? 'text' : 'password'" [(ngModel)]="confirmarContra" name="confirmarContra" required placeholder="Confirme su contraseña">
+        <ion-button
+            fill="clear"
+            slot="end"
+            (click)="toggleMostrarConfirmarContra()"
+          >
+            <ion-icon
+              [name]="mostrarConfirmarContra ? 'eye-off' : 'eye'"
+            ></ion-icon>
+          </ion-button>
+      </ion-input>
+    </ion-item>
+    <div *ngIf="errorConfirmarContra" style="color:red; font-size:12px;">{{ errorConfirmarContra }}</div>
+
+    <div class="button-container">
+      <ion-button expand="full" type="submit">Registrarse</ion-button>  
+    </div>
+
+    <div class="ion-text-center">
+      <p>¿Ya tienes una cuenta?</p> 
+      <ion-button fill='outline' color="primary" routerLink="/login">Iniciar Sesión</ion-button>  
+    </div> 
+  </form> 
+</ion-content>

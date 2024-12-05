@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="postventa-background">
+
+  <form class="lista-postventa" (ngSubmit)="postventaForm($event)">
+    <h1>¡Estamos aquí para ayudarte!</h1>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <hr>  
+      <ion-input type="text" required [(ngModel)]="nombre_usuario" name="nombre_usuario" placeholder="Ingrese su nombre" required pattern="^[A-Za-zñÑ0-9 ]+$"></ion-input>
+    </ion-item>
+    <div *ngIf="errorNombre" style="color:red; font-size:12px;">{{ errorNombre }}</div>
+
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <hr>
+      <ion-input type="text" required [(ngModel)]="apellido_usuario" name="apellido_usuario" placeholder="Ingrese su apellido" required pattern="^[A-Za-zñÑ0-9 ]+$"></ion-input>
+    </ion-item>
+    <div *ngIf="errorApellido" style="color:red; font-size:12px;">{{ errorApellido }}</div>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <hr>
+      <ion-input type="email" required [(ngModel)]="correo" name="correo" placeholder="Ingrese su correo" required pattern="^[A-Za-zñÑ0-9 ]+$"></ion-input>
+    </ion-item>
+    <div *ngIf="errorCorreo" style="color:red; font-size:12px;">{{ errorCorreo }}</div>
+
+    <ion-item>
+      <ion-label position="floating">Teléfono</ion-label>
+      <hr>
+      <ion-input type="tel" required [(ngModel)]="telefono" name="telefono" placeholder="Ingrese su telefono (sin el +56)" required pattern="^[A-Za-zñÑ0-9 ]+$"></ion-input>
+    </ion-item>
+    <div *ngIf="errorTelefono" style="color:red; font-size:12px;">{{ errorTelefono }}</div>
+
+    <ion-item>
+      <ion-label position="floating">Comuna</ion-label>
+      <hr>
+      <ion-input type="text" required [(ngModel)]="comuna" name="comuna" placeholder="Ingrese su comuna" required pattern="^[A-Za-zñÑ0-9 ]+$"></ion-input>
+    </ion-item>
+    <div *ngIf="errorComuna" style="color:red; font-size:12px;">{{ errorComuna }}</div>
+
+    <ion-item>
+      <ion-label position="floating">Descripción del Problema</ion-label>
+      <hr>
+      <ion-textarea rows="6" required [(ngModel)]="descripcion" name="descripcion" placeholder="Cuéntanos su problema" required pattern="^[A-Za-zñÑ0-9 ]+$"></ion-textarea>
+    </ion-item>
+    <div *ngIf="errorDescripcion" style="color:red; font-size:12px;">{{ errorDescripcion }}</div>
+
+    <ion-button expand="full" type="submit">
+      Enviar
+    </ion-button>
+  </form>
+
+</ion-content>

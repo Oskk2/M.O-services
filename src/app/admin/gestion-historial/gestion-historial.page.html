@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="compras.length > 0">
+    <ion-item *ngFor="let compra of compras">
+      <ion-label>
+        <h2>Fecha: {{ formatoFecha(compra.f_venta) }}</h2>
+        <p>Total: ${{ compra.total }}</p>
+        <p>Estado: {{ obtenerEstadoTexto(compra.id_estado) }}</p>
+        <p>Dirección: {{ compra.direccion }}</p>
+        <p>Comuna: {{ compra.comuna }}</p>
+        <p>Incluye Instalación: {{ compra.incluir_instalacion ? 'Sí' : 'No' }}</p>
+        
+        <!-- Mostrar nombre y correo del usuario -->
+        <p><strong>Nombre Usuario:</strong> {{ compra.nombre_usuario }}</p>
+        <p><strong>Correo:</strong> {{ compra.correo }}</p>
+      </ion-label>
+      <ion-button color="primary" (click)="cambiarEstadoCompra(compra)">
+        Cambiar Estado
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  
+  <ion-item *ngIf="compras.length === 0">
+    <ion-label>No hay compras registradas.</ion-label>
+  </ion-item>
+</ion-content>

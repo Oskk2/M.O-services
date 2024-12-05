@@ -1,0 +1,79 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="reseñas-container">
+    <ion-list class="resena-content">
+      <ion-label position="stacked">
+        <h2>Reseñas de los usuarios</h2>
+      </ion-label>
+      
+      <ion-item class="resena-item" *ngFor="let resena of arregloResenas">
+        <div class="reseña-texto">
+          <p class="descripcion">{{ resena.descripcion }}</p>
+          <div class="puntuaciones">
+            <p class="puntuacion">
+              Puntos de Calidad:
+              <span *ngFor="let i of [].constructor(resena.puntos_calidad)">
+                <ion-icon name="star" color="warning"></ion-icon>
+              </span>
+            </p>
+            <p class="puntuacion">
+              Puntos de Servicio:
+              <span *ngFor="let i of [].constructor(resena.puntos_servicio)">
+                <ion-icon name="star" color="warning"></ion-icon>
+              </span>
+            </p>
+          </div>
+          <p class="fecha-resena">Fecha: <span>{{ resena.f_resena }}</span></p>
+        </div>
+        <ion-button *ngIf="resena.id_usuario === userId && resena.modificado === 0" size="small" color="tertiary" (click)="editarResena(resena)">
+          Modificar
+        </ion-button>
+                 
+      </ion-item>          
+
+      <ion-item *ngIf="arregloResenas.length === 0">
+        <p>No hay reseñas disponibles.</p>
+      </ion-item>
+    </ion-list>
+
+    <div class="form-item">
+      <ion-label position="stacked">
+        <h2>Deja tu opinión</h2>
+      </ion-label>
+      <ion-textarea [(ngModel)]="descripcion" placeholder="Escribe tu reseña" required></ion-textarea>
+    </div>
+
+    <div class="resena-content calificaciones">
+      <ion-item lines="none">
+        <ion-label>¿Estás satisfecho con la calidad? Califica</ion-label>
+        <div class="iconos">
+          <ion-icon name="{{ puntos_calidad >= 1 ? 'star' : 'star-outline' }}" (click)="calificarCalidad(1)" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_calidad >= 2 ? 'star' : 'star-outline' }}" (click)="calificarCalidad(2)" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_calidad >= 3 ? 'star' : 'star-outline' }}" (click)="calificarCalidad(3)" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_calidad >= 4 ? 'star' : 'star-outline' }}" (click)="calificarCalidad(4)" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_calidad >= 5 ? 'star' : 'star-outline' }}" (click)="calificarCalidad(5)" color="warning"></ion-icon>
+        </div>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>¿Estás satisfecho con el servicio? Califica</ion-label>
+        <div class="iconos">
+          <ion-icon name="{{ puntos_servicio >= 1 ? 'star' : 'star-outline' }}" (click)="calificarServicio(1)" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_servicio >= 2 ? 'star' : 'star-outline' }}" (click)="calificarServicio(2)" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_servicio >= 3 ? 'star' : 'star-outline' }}" (click)="calificarServicio(3)" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_servicio >= 4 ? 'star' : 'star-outline' }}" (click)="calificarServicio(4)" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_servicio >= 5 ? 'star' : 'star-outline' }}" (click)="calificarServicio(5)" color="warning"></ion-icon>
+        </div>
+      </ion-item>
+    </div>
+
+    <ion-button expand="block" [disabled]="!userId" (click)="agregarResena()" class="submit-button">
+      <ion-icon name="add"></ion-icon> Enviar Reseña
+    </ion-button>  
+  </div>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Modificar Reseña</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/resenas"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="editar-resena-container">
+    <ion-list class="resena-content">
+      <ion-item>
+        <ion-label position="stacked">Descripción de la reseña</ion-label>
+        <ion-textarea [(ngModel)]="descripcion" placeholder="Escribe tu reseña"></ion-textarea>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Calidad</ion-label>
+        <div class="iconos">
+          <ion-icon name="{{ puntos_calidad >= 1 ? 'star' : 'star-outline' }}" (click)="puntos_calidad = 1" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_calidad >= 2 ? 'star' : 'star-outline' }}" (click)="puntos_calidad = 2" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_calidad >= 3 ? 'star' : 'star-outline' }}" (click)="puntos_calidad = 3" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_calidad >= 4 ? 'star' : 'star-outline' }}" (click)="puntos_calidad = 4" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_calidad >= 5 ? 'star' : 'star-outline' }}" (click)="puntos_calidad = 5" color="warning"></ion-icon>
+        </div>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Servicio</ion-label>
+        <div class="iconos">
+          <ion-icon name="{{ puntos_servicio >= 1 ? 'star' : 'star-outline' }}" (click)="puntos_servicio = 1" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_servicio >= 2 ? 'star' : 'star-outline' }}" (click)="puntos_servicio = 2" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_servicio >= 3 ? 'star' : 'star-outline' }}" (click)="puntos_servicio = 3" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_servicio >= 4 ? 'star' : 'star-outline' }}" (click)="puntos_servicio = 4" color="warning"></ion-icon>
+          <ion-icon name="{{ puntos_servicio >= 5 ? 'star' : 'star-outline' }}" (click)="puntos_servicio = 5" color="warning"></ion-icon>
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" (click)="actualizarResena()" class="submit-button">
+      <ion-icon name="save-outline"></ion-icon> Guardar Cambios
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <div class="img-fondo">
+    <img src="assets/img/logo-ayuda.png" alt="Avatar" class="logo-ayuda">
+    </div>
+    <ion-list-header>Preguntas Frecuentes</ion-list-header>
+  
+    <!-- Pregunta 1 -->
+    <ion-item (click)="showText1 = !showText1">
+      <ion-label>¿Cómo puedo cambiar mi contraseña?</ion-label>
+      <ion-icon slot="end" [name]="showText1 ? 'chevron-up' : 'chevron-down'"></ion-icon>
+    </ion-item>
+    <div *ngIf="showText1" class="info-ayuda">
+      <p>Para cambiar tu contraseña, ve a ajustes y selecciona "Cambiar contraseña".</p>
+      <ion-button button (click)="irCambiarContra()">Ir a cambiar contraseña</ion-button>
+    </div>
+
+    <!-- Pregunta 2 -->
+    <ion-item (click)="showText2 = !showText2">
+      <ion-label>¿Cómo puedo actualizar mi información de perfil?</ion-label>
+      <ion-icon slot="end" [name]="showText2 ? 'chevron-up' : 'chevron-down'"></ion-icon>
+    </ion-item>
+    <div *ngIf="showText2" class="info-ayuda">
+      <p>Dirígete a tu perfil y selecciona el campo que deseas cambiar.</p>
+      <ion-button button (click)="irEditarPerfil()">Ir a editar perfil</ion-button>
+    </div>
+
+    <!-- Pregunta 3 -->
+    <ion-item (click)="showText3 = !showText3">
+      <ion-label>¿Cómo puedo contactar con el algun tecnico o distribuidor?</ion-label>
+      <ion-icon slot="end" [name]="showText3 ? 'chevron-up' : 'chevron-down'"></ion-icon>
+    </ion-item>
+    <div *ngIf="showText3" class="info-ayuda">
+      <p>Puedes contactar con un tecnico y/o distribuidor a través de la aplicación en la seccion de "cotizar"</p>
+      <ion-button button (click)="irCotizar()">Ir a cotizar</ion-button>
+    </div>
+
+  </ion-list>
+
+</ion-content>

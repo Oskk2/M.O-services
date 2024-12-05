@@ -1,0 +1,46 @@
+//cuerpo general de la pagina
+
+ion-toolbar {
+  --background: #a8a8a8;
+  --color: #000000;
+}
+
+  ion-content {
+    --background: #d8d4d4;
+    padding: 20px;
+  }
+
+  ion-grid {
+    padding: 0;
+  }
+
+  ion-button {
+    --background: #007bff; 
+    --color: #ffffff; 
+    border-radius: 20px; 
+    transition: background-color 0.3s ease; 
+  }
+
+  //logo empresa
+  .img-logo{
+    width: 70%;
+    height: auto; 
+  }
+
+  //p general
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  //h5 general
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  //seccion inicio IMAGEN HOME
+  .img-home{
+    width: 100%;
+    border: 1px solid #000000;
+  }

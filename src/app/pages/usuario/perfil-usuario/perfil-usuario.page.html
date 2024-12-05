@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-text-center ion-padding-top">
+    <img src="assets/img/logo-usuario.png" alt="Avatar" class="logo-usuario" />
+    <h2>{{ nombre_usuario }} {{ apellido_usuario }}</h2>
+    <p class="correo">{{ correo }}</p>
+    <hr />
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información Personal</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label>Nombre:</ion-label>
+          <ion-note slot="end">{{ nombre_usuario }}</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Apellido:</ion-label>
+          <ion-note slot="end">{{ apellido_usuario }}</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Correo Electrónico:</ion-label>
+          <ion-note slot="end">{{ correo }}</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-button routerLink="/modificar-usuario">Modificar perfil</ion-button>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Configuración</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label>Notificaciones</ion-label>
+          <ion-toggle  [(ngModel)]="notificacionesActivadas" (ionChange)="mostrarNotificaciones($event)"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Modo Oscuro</ion-label>
+          <ion-toggle></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Idioma:</ion-label>
+          <ion-select placeholder="Selecciona un idioma" aria-label="Seleccionar idioma" interface="alert">
+            <ion-select-option value="es">Español</ion-select-option>
+            <ion-select-option value="en">Inglés</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

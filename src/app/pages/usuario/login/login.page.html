@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="logo-login">
+    <img src="assets/img/logoLogin.png" alt="Logo"/>
+  </div>
+
+  <form (ngSubmit)="logearse()">
+    <ion-item>
+      <ion-label position="floating">Correo Electrónico</ion-label>
+      <hr>
+      <ion-input type="email" [(ngModel)]="correo" name="correo" required placeholder="Ingrese su correo"></ion-input>
+    </ion-item>
+    <div *ngIf="errorCorreo" style="color:red; font-size:12px;">{{ errorCorreo }}</div>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <hr>
+      <ion-input [type]="mostrarContra ? 'text' : 'password'" [(ngModel)]="contrasena" name="contrasena" required placeholder="Ingrese su contraseña">
+        <ion-button fill="clear" slot="end" (click)="togglemostrarContra()">
+          <ion-icon [name]="mostrarContra ? 'eye-off' : 'eye'"></ion-icon>
+        </ion-button>
+      </ion-input>
+    </ion-item>
+    <div *ngIf="errorContra" style="color:red; font-size:12px;">{{ errorContra }}</div>
+
+    <div class="ion-text-end">
+      <ion-button fill="clear" color="primary" routerLink="/verificar-correo">
+        ¿Olvidaste tu contraseña?
+      </ion-button>
+    </div>
+
+    <ion-button type="submit" expand="full">Iniciar Sesión</ion-button>
+  </form>
+
+  <div class="ion-text-center">
+    <p>¿No tienes una cuenta?</p>
+    <ion-button fill="outline" color="primary" routerLink="/registro">Registrarse</ion-button>
+  </div>
+</ion-content>

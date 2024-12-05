@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="agregarProducto($event)">
+    <img *ngIf="url_imagen" [src]="url_imagen" alt="Sin imagen" style="height: 250px; width: 500px;">
+    
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="nombre_cortina" name="nombre" required></ion-input>
+    </ion-item>
+    <div *ngIf="errorNombre" style="color:red; font-size:12px;">{{ errorNombre }}</div>
+
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea [(ngModel)]="descripcion" name="descripcion" required></ion-textarea>
+    </ion-item>
+    <div *ngIf="errorDescripcion" style="color:red; font-size:12px;">{{ errorDescripcion }}</div>
+
+    <ion-item>
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input type="number" [(ngModel)]="precio" name="precio" required></ion-input> 
+    </ion-item>
+    <div *ngIf="errorPrecio" style="color:red; font-size:12px;">{{ errorPrecio }}</div>
+
+    <ion-item>
+      <ion-label position="floating">Stock</ion-label>
+      <ion-input type="number" [(ngModel)]="stock" name="stock" required></ion-input>
+    </ion-item>
+    <div *ngIf="errorStock" style="color:red; font-size:12px;">{{ errorStock }}</div>
+
+    <ion-item>
+      <ion-button (click)="takePicture()" class="boton-foto">Insertar imagen</ion-button>
+    </ion-item>
+
+    <ion-button expand="block" type="submit">Agregar Cortina</ion-button>
+    <hr>
+    <ion-button expand="block" [routerLink]="['/productos']">Ver cortinas agregadas</ion-button>
+  </form>
+</ion-content>

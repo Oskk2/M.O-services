@@ -1,0 +1,65 @@
+//cuerpo general de la pagina
+
+ion-toolbar {
+  --background: #a8a8a8;
+  --color: #000000;
+}
+
+  ion-content {
+      --background: #d8d4d4;
+    }
+
+  .logo-ayuda{
+    width: 30%;
+    height: auto;
+    margin-left: 35%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  ion-list {
+    background-color: #cccccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px black;
+  }
+
+  ion-list-header {
+    --background: #a8a8a8;
+    padding-bottom: 10px;
+  }
+  
+  ion-item {
+    --background: #cccccc;
+    --color: #000000;
+    --background: transparent;
+  }
+
+  ion-label {
+    font-size: 16px;
+  }
+
+  p {
+    text-align: center; 
+    margin: 0; 
+    padding: 10px;
+  }
+
+  .info-ayuda {
+    background-color: #f0f0f0; // Cambia este valor al color deseado
+    padding: 15px; // Espaciado interno
+    border-radius: 8px; // Bordes redondeados (opcional)
+    margin: 10px 0; // Espaciado entre contenedores
+  }
+
+  .img-fondo {
+    background-color: #d8d4d4;
+  }
+
+  ion-button {
+    --background: #007bff; 
+    --color: #ffffff; 
+    border-radius: 20px; 
+    transition: background-color 0.3s ease; 
+  }
+
+  

@@ -1,0 +1,45 @@
+//cuerpo general de la pagina
+
+ion-toolbar {
+  --background: #a8a8a8;
+  --color: #000000;
+}
+
+  ion-content {
+      --background: #d8d4d4;
+  }
+
+  .boton-azul {
+    --background: #007bff; 
+    --color: #ffffff; 
+    border-radius: 20px; 
+    transition: background-color 0.3s ease; 
+  }
+
+  .boton-verde {
+    --background: #0ee74f; 
+    --color: #ffffff; 
+    border-radius: 20px; 
+    transition: background-color 0.3s ease; 
+  }
+
+  .img-cotizar {
+    padding-top: 40%;
+  }
+  
+  //p general
+  p {
+    font-size: 0.8rem;
+    color: #504f4f;
+    margin: 0;
+    padding: 0 4px; 
+    padding-top: 10px;
+  }
+  
+  //h5 general
+  h1 {
+    font-size: 1rem; 
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+  }

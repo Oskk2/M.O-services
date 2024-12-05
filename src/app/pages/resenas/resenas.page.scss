@@ -1,0 +1,134 @@
+ion-toolbar {
+  --background: #a8a8a8;
+  --color: #000000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ion-content {
+  --background: #d8d4d4;
+  padding: 20px;
+}
+
+ion-button.submit-button {
+  --background: #007bff;
+  --color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.reseñas-container {
+  background-color: #d8d4d4;
+
+  .resena-content {
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: none; // Eliminar sombra
+
+    .resena-item {
+      background-color: transparent; // Fondo transparente
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: none; // Sin sombra
+
+      .reseña-texto {
+        .descripcion {
+          font-size: 1rem;
+          color: #333333;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        .puntuaciones {
+          margin-bottom: 10px;
+
+          .puntuacion {
+            font-size: 0.9rem;
+            color: #333333;
+            font-weight: bold;
+
+            span {
+              color: #555555;
+            }
+          }
+        }
+
+        .fecha-resena {
+          font-size: 0.85rem;
+          color: #888888;
+        }
+      }
+    }
+  }
+
+  .form-item {
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: none;
+
+    ion-label h2 {
+      color: #333333;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    ion-textarea {
+      --background: #e0e0e0; // Igualar fondo al contenedor
+      --color: #333333;
+      border-radius: 8px;
+      padding: 12px;
+      min-height: 100px;
+      box-shadow: none;
+    }
+  }
+
+  .calificaciones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+
+    ion-item {
+      --background: transparent;
+      align-items: center;
+
+      ion-label {
+        font-weight: bold;
+        color: #333333;
+        font-size: 1.1rem;
+      }
+
+      .iconos {
+        display: flex;
+        gap: 5px;
+        margin-top: 5px;
+      }
+
+      ion-icon {
+        font-size: 24px;
+        color: #000000; // Color inicial de borde negro
+        --border-color: black; // Borde negro en la estrella
+        --border-width: 2px;
+        --border-style: solid;
+
+        &[color="warning"] {
+          --color: #ffcc00; // Color amarillo al seleccionar
+          --border-color: transparent; // Borde se vuelve transparente una vez seleccionado
+        }
+      }
+    }
+  }
+}

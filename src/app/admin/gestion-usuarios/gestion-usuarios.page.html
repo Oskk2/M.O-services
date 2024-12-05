@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ng-container *ngFor="let usuario of usuarios">
+      <ion-item size="11" size-md="9">
+        <ion-label class="user-info">
+          <h2>Cliente: {{ usuario.nombre_usuario }} {{ usuario.apellido_usuario }}</h2>
+          <p class="p1">Correo: {{ usuario.correo }}</p>
+          <p class="p1" [attr.title]="getEncryptedPassword(usuario)">Contraseña: {{ getEncryptedPassword(usuario) | slice:0:10 }}... (ver más)</p>
+        </ion-label>
+        <ion-button (click)="toggleUsuario(usuario)" [color]="usuario.estado === 1 ? 'danger' : 'success'">
+          <ion-icon slot="icon-only" name="ban"></ion-icon>
+          {{ usuario.estado === 1 ? 'Banear' : 'Desbanear' }}
+        </ion-button>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</ion-content>

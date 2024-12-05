@@ -1,0 +1,63 @@
+//cuerpo general de la pagina
+
+ion-toolbar {
+  --background: #a8a8a8;
+  --color: #000000;
+}
+
+  ion-content {
+      --background: #d8d4d4;
+    }
+  
+  ion-item {
+    --background: #cccccc;
+    --color: #000000;
+  }
+
+  .boton-rojo {
+    --background: rgb(231, 14, 14); 
+    --color: #ffffff; 
+    border-radius: 20px; 
+    transition: background-color 0.3s ease; 
+  }
+
+  .boton-azul {
+    --background: #007bff; 
+    --color: #ffffff; 
+    border-radius: 20px; 
+    transition: background-color 0.3s ease; 
+  }
+
+  //seccion carrito de compras
+  .img-cortinaCarrito {
+    width: 30%;
+  }
+
+  //p general
+  p {
+    font-size: 0.8rem;
+    color: #504f4f;
+    margin: 0;
+    padding: 0 4px; 
+  }
+  
+  //h5 general
+  h2 {
+    font-size: 1rem; 
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+  }
+
+  // Estilo del mensaje de carrito vacío
+  .carrito-vacio {
+    font-size: 1rem; /* Tamaño de fuente grande */
+    font-weight: bold;
+    color: #333;
+    text-align: center; /* Centrar el texto horizontalmente */
+    padding: 10px; /* Espaciado alrededor del texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%; /* Ocupar el 100% del contenedor */
+  }

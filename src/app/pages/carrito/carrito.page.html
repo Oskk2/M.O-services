@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar class="toolbar-fondo">
+    <ion-buttons slot="end">
+      <ion-button (click)="vaciarCarrito()" color="danger">Vaciar Carrito</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-item>
+    <ion-label>Seleccionar Moneda:</ion-label>
+    <ion-select [(ngModel)]="monedaSeleccionada" (ionChange)="calcularTotal()">
+      <ion-select-option value="CLP">CLP</ion-select-option>
+      <ion-select-option value="USD">USD</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Mostrar el mensaje si el carrito está vacío -->
+  <div *ngIf="carrito.length === 0" class="carrito-vacio">
+    No tienes productos en el carrito
+  </div>
+
+  <ion-list *ngIf="carrito.length > 0">
+    <ion-item *ngFor="let producto of carrito; let i = index">
+      <ion-label>
+        <img class="img-cortinaCarrito" [src]="producto.url_imagen" alt="">
+        <h2>{{ producto.nombre_cortina }}</h2>
+        <p>Precio: {{ formatoPrecio(producto.precio) }}</p>
+        <p>Cantidad: {{ producto.cantidad }}</p>
+        <ion-item>
+          <ion-label>¿Incluir instalación?</ion-label>
+          <ion-checkbox [(ngModel)]="producto.incluirInstalacion" (ionChange)="calcularTotal()"></ion-checkbox>
+        </ion-item>
+      </ion-label>
+      <ion-button (click)="eliminarProducto(i)" class="boton-rojo">Eliminar</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>Total: {{ formatoPrecio(total) }}</ion-title>
+      <ion-buttons slot="end">
+        <ion-button class="boton-azul" (click)="finalizarCompra()" [disabled]="carrito.length === 0">
+          Finalizar Compra
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

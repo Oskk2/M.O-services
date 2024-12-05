@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="modificarCortina($event)">
+    <img *ngIf="cortinaRecibida.url_imagen" [src]="cortinaRecibida.url_imagen" alt="{{ cortinaRecibida.url_imagen }}" style="height: 250px; width: 500px;"/>
+
+    <ion-item>
+      <ion-label position="floating">Nombre de la Cortina</ion-label>
+      <ion-input [(ngModel)]="cortinaRecibida.nombre_cortina" name="nombre_cortina" required pattern="^[A-Za-zñÑ0-9 ]+$"></ion-input>
+    </ion-item>
+   
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea [(ngModel)]="cortinaRecibida.descripcion" name="descripcion" required pattern="^[A-Za-zñÑ0-9 ]+$"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input type="number" [(ngModel)]="cortinaRecibida.precio" name="precio" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Stock</ion-label>
+      <ion-input type="number" [(ngModel)]="cortinaRecibida.stock" name="stock" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-button (click)="takePicture()" class="boton-foto">Insertar imagen</ion-button>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" class="boton-azul">Modificar Cortina</ion-button>
+    <hr>
+    <ion-button expand="block" (click)="volver()" class="boton-azul">Volver</ion-button>
+  </form>
+</ion-content>

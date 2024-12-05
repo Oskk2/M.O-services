@@ -1,0 +1,38 @@
+//cuerpo general de la pagina
+
+ion-toolbar {
+  --background: #a8a8a8;
+  --color: #000000;
+}
+
+  ion-content {
+      --background: #d8d4d4;
+      text-align: center;
+    }
+  
+  p {
+    font-size: 0.8rem;
+    color: #504f4f;
+    margin: 0;
+    padding: 0 4px; 
+  }
+  
+  h1 {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+    padding-top: 70px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+  }
+
+  ion-button {
+    margin-top: 20px;
+    color: white;
+  }

@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <form (submit)="cambiarContrasena($event)">
+    <div class="ion-text-center">
+      <img class="img-recuperarContra" src="assets/img/logoRecuperarContra.png" alt="Logo de Cambiar Contraseña">
+    </div>
+    <ion-item>
+      <ion-label position="floating">Nueva Contraseña</ion-label>
+      <hr>
+      <ion-input [type]="mostrarContra ? 'text' : 'password'" type="password" [(ngModel)]="nuevaContra" name="nuevaContra" required placeholder="Ingrese su nueva contraseña">
+        <ion-button fill="clear" slot="end" (click)="toggleMostrarContra()">
+        <ion-icon [name]="mostrarContra ? 'eye-off' : 'eye'"></ion-icon>
+      </ion-button>
+    </ion-input>
+    </ion-item>
+    <div *ngIf="errorNuevaContra" style="color:red; font-size:12px;">
+      {{ errorNuevaContra }}
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Confirmar Contraseña</ion-label>
+      <hr>
+      <ion-input [type]="mostrarConfirmarContra ? 'text' : 'password'" type="password" [(ngModel)]="confirmarContra" name="confirmarContra" required placeholder="Confirme su nueva contraseña">
+        <ion-button fill="clear" slot="end" (click)="toggleMostrarConfirmarContra()">
+          <ion-icon [name]="mostrarConfirmarContra ? 'eye-off' : 'eye'"></ion-icon>
+        </ion-button>
+      </ion-input>
+    </ion-item>
+    <div *ngIf="errorConfirmarContra" style="color:red; font-size:12px;">
+      {{ errorConfirmarContra }}
+    </div>
+
+    <ion-button type="submit" expand="full" class="ion-margin-top">
+      Cambiar Contraseña
+    </ion-button>
+
+  </form>
+
+</ion-content>

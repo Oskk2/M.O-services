@@ -1,0 +1,53 @@
+//cuerpo general de la pagina
+
+ion-toolbar {
+  --background: #a8a8a8;
+  --color: #000000;
+}
+
+  ion-content {
+      --background: #d8d4d4;
+    }
+  
+  ion-grid {
+    --background: #cccccc;
+    --color: #000000;
+  }
+
+  ion-card {
+    --background: #cccccc;
+    --color: #000000;
+  }
+  
+  //p general
+  p {
+    font-size: 0.8rem;
+    color: #504f4f;
+    margin: 0;
+    padding: 0 4px; 
+  }
+  
+  //h5 general
+  h3 {
+    font-size: 1rem; 
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+  }
+
+    
+  .boton-azul {
+    --background: #007bff;
+    --color: #ffffff; 
+    border-radius: 20px; 
+    transition: background-color 0.3s ease; 
+  }
+
+     
+  .boton-rojo {
+    --background: #ff0000; 
+    --color: #ffffff;
+    border-radius: 20px; 
+    transition: background-color 0.3s ease; 
+  }
+

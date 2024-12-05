@@ -1,0 +1,111 @@
+//cuerpo general de la pagina
+
+ion-toolbar {
+  --background: #a8a8a8;
+  --color: #000000;
+}
+
+  ion-content {
+      --background: #d8d4d4;
+    }
+  
+  ion-grid {
+    --background: #cccccc;
+    --color: #000000;
+    padding: 0;
+  }
+
+  ion-card {
+    --background: #cccccc;
+    --color: #000000;
+  }
+
+  ion-button {
+    --background: #007bff; 
+    --color: #ffffff; 
+    border-radius: 20px; 
+    transition: background-color 0.3s ease; 
+  }
+
+  .cortina-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .img-cortina {
+    width: 100%;
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+
+  ion-card-header,
+  ion-card-content {
+    text-align: center; /* Centra el texto dentro del card */
+  }
+  
+  //h5 general
+  h3 {
+    font-size: 1rem; 
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+  }
+
+  .precio-cortina {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .moneda-selector {
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .moneda-selector h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  ion-select {
+    --color: #333;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .cortina-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cantidad-seleccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .cantidad-seleccion ion-button {
+    font-size: 1.2em;
+    color: var(--ion-color-primary);
+  }
+  
+  .cantidad-seleccion span {
+    padding: 0 8px;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  ion-range {
+    width: 100%;
+    margin: 5px 0;
+  }
+  
+  

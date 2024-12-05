@@ -1,0 +1,36 @@
+//cuerpo general de la pagina
+
+ion-toolbar {
+  --background: #a8a8a8;
+  --color: #000000;
+}
+
+  ion-content {
+      --background: #d8d4d4;
+    }
+
+  //seccion login y registro
+  .logo-login {
+    width: 90%;
+    padding-left: 20%;
+  }
+  
+  ion-item {
+    --background: #cccccc;
+    --color: #000000;
+  }
+  
+  //p general
+  p {
+    font-size: 0.8rem;
+    color: #504f4f;
+    margin: 0;
+    padding: 0 4px; 
+  }
+
+  ion-button{
+    --background: #007bff; 
+    --color: #ffffff; 
+    border-radius: 20px; 
+    transition: background-color 0.3s ease; 
+  }

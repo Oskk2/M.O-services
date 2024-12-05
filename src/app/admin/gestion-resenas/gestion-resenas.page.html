@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let resena of arregloResenas">
+      <ion-label>
+        <h3>Descripción:</h3>
+        <p>{{ resena.descripcion }}</p>
+        
+        <h5>Puntuación Calidad: <span>{{ resena.puntos_calidad }}</span></h5>
+        <h5>Puntuación Servicio: <span>{{ resena.puntos_servicio }}</span></h5>
+        <h5>Fecha: <span>{{ resena.f_resena }}</span></h5>
+      </ion-label>
+
+      <ion-button color="danger" expand="full" (click)="banearResena(resena)">
+        <ion-icon slot="icon-only" name="ban"></ion-icon> Banear Resena
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

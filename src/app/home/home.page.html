@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <img class="img-logo" src="assets/img/LogoM.O.png" alt="M.O services" />
+        <h1>Bienvenído a M.O Cortinas</h1>
+        <p>Transforma tu hogar con nuestras elegantes cortinas</p>
+        <ion-button expand="full" routerLink="/productos">Explora nuestros productos</ion-button>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <img class="img-home" src="assets/img/cortina1.jpg" alt="Cortina moderna" />
+      </ion-col>
+      <ion-col>
+        <img class="img-home" src="assets/img/cortina2.jpg" alt="Cortina clásica" />
+      </ion-col>
+      <ion-col>
+        <img class="img-home" src="assets/img/cortina3.jpg" alt="Cortina de blackout" />
+      </ion-col>
+    </ion-row>
+    
+    <ion-row class="ion-text-center">
+      <ion-col>
+        <h2>Servicios de Instalación</h2>
+        <p>Ofrecemos instalación profesional para que tus cortinas luzcan perfectas.</p>
+        <ion-button expand="full" routerLink="/servicios">Ver Servicios de Instalación</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

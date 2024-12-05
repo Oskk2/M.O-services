@@ -1,0 +1,34 @@
+// Cuerpo general de la página
+ion-toolbar {
+  --background: #a8a8a8;
+  --color: #000000;
+  padding: 16px; // Add padding for better spacing
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); // Subtle shadow for depth
+}
+
+ion-content {
+  --background: #d8d4d4;
+  padding: 16px; // Add padding for better spacing
+}
+
+// Estilo para los items
+ion-item {
+  --background: #cccccc;
+  --color: #000000;
+  margin-bottom: 12px; // Add margin between items
+  border-radius: 8px; // Add rounded corners for a softer look
+  transition: transform 0.2s ease, box-shadow 0.2s ease; // Smooth transition effects
+}
+
+// Estilo para los botones
+ion-button {
+  --background: #007bff; // Change button background color for contrast
+  --color: #ffffff; // Button text color
+  border-radius: 20px; // Rounded button edges
+  transition: background-color 0.3s ease; // Smooth background transition
+}
+
+.boton-foto {
+  display: block; 
+  margin: 0 auto; 
+}

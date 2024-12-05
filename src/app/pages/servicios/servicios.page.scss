@@ -1,0 +1,59 @@
+//cuerpo general de la pagina
+
+ion-toolbar {
+  --background: #a8a8a8;
+  --color: #000000;
+}
+
+  ion-content {
+      --background: #d8d4d4;
+      padding: 10px;
+    }
+  
+  //p general
+  p {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+  
+  ion-grid {
+    padding: 0;
+  }
+
+  ion-list ion-item {
+    --background: #d8d4d4;
+    --color: #000000;
+    border-radius: 8px; 
+    border: 2px solid #000000;
+  }
+
+  ion-button {
+    --background: #007bff; 
+    --color: #ffffff; 
+    border-radius: 20px; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  //h5 general
+  h5 {
+    font-size: 1rem; 
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+  }
+
+  ion-col p {
+    --background: #d8d4d4;
+    font-size: 16px;
+    color: #333;
+  }
+
+  //seccion servicios
+  .img-servicio {
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+    margin-bottom: 8px;
+    border: 2px solid #000000;
+    padding: 2px; 
+  }

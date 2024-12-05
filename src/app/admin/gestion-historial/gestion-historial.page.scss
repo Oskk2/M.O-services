@@ -1,0 +1,80 @@
+// Cuerpo general de la página
+
+ion-toolbar {
+  --background: #a8a8a8;
+  --color: #000000;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  border-bottom: 2px solid #d8d4d4;
+}
+
+ion-content {
+  --background: #d8d4d4;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// Estilo para cada item de compra
+ion-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+ion-label {
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 12px;
+}
+
+ion-button {
+  align-self: flex-start;
+  margin-top: 8px;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+ion-item:last-child {
+  margin-bottom: 0;
+}
+
+ion-item ion-label p {
+  margin: 4px 0;
+}
+
+ion-item ion-label h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+}
+
+ion-item ion-label p {
+  font-size: 14px;
+  color: #666666;
+}
+
+ion-item ion-label p strong {
+  font-weight: bold;
+  color: #333333;
+}
+
+ion-item ion-button {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 16px;
+}

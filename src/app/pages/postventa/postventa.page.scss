@@ -1,0 +1,58 @@
+// Cuerpo general de la página
+ion-toolbar {
+  --background: #a8a8a8; // Color de fondo del toolbar
+  --color: #000000; // Color del texto en el toolbar
+  border-bottom: 2px solid #007bff; // Línea inferior para resaltar el toolbar
+}
+
+ion-content {
+  --background: #d8d4d4; // Color de fondo del contenido
+  padding: 20px; // Espaciado interno para el contenido
+}
+
+// Título principal
+h1 {
+  font-size: 2rem; // Tamaño grande para el título
+  font-weight: bold;
+  color: #333; // Color oscuro para el título
+  text-align: center; // Centrar el texto
+  margin-bottom: 20px; // Espacio debajo del título
+}
+
+// P general
+p {
+  font-size: 1rem; // Tamaño de fuente legible
+  color: #504f4f; // Color del texto
+  margin: 0;
+  padding: 0 4px;
+}
+
+// Descripción de postventa
+.postventa-descripcion {
+  margin-bottom: 1.5rem; // Espacio adicional para separar secciones
+}
+
+// Sección postventa
+.lista-postventa {
+  padding: 16px; // Espaciado interno
+  background-color: #d8d4d4; // Fondo gris claro para contraste
+  border-radius: 10px; // Bordes redondeados para suavizar la apariencia
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1); // Sombra sutil para dar profundidad
+
+}
+
+// Estilo de los elementos de la lista
+ion-item {
+  --background: #ffffff; // Color de fondo de los elementos de la lista
+  --color: #000000; // Color del texto en los elementos de la lista
+  border-radius: 8px; // Bordes redondeados para cada elemento
+  margin-bottom: 15px; // Espacio entre los elementos
+
+}
+
+ion-button {
+  --background: #0ee74f; 
+  --color: #ffffff; 
+  border-radius: 20px; 
+  transition: background-color 0.3s ease; 
+}

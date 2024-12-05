@@ -1,0 +1,7 @@
+{
+  "name": "M.O services",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

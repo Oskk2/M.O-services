@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let postventa of arregloPostventa">
+      <ion-label>
+        <h2>Cliente</h2>
+        <h2>Nombre: {{ postventa.nombre_usuario }}</h2>
+        <h2>Apellido: {{ postventa.apellido_usuario }}</h2>
+        <h3 class="correo-postventa">Correo: {{ postventa.correo }}</h3>
+        <h3 class="telefono-postventa">Fono: {{ postventa.telefono }}</h3>
+        <h3 class="comuna-postventa">Comuna: {{ postventa.comuna }}</h3>
+        <p class="descripcion-postventa">Problema: {{ postventa.descripcion }}</p>
+      </ion-label>
+
+      <ion-button color="danger" expand="full" (click)="eliminarPostventa(postventa)"><ion-icon slot="icon-only" name="trash"></ion-icon>
+        Eliminar Postventa</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

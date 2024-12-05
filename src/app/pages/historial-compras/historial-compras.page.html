@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-item>
+  <ion-label>Seleccionar Moneda:</ion-label>
+  <ion-select [(ngModel)]="monedaSeleccionada">
+    <ion-select-option value="CLP">CLP</ion-select-option>
+    <ion-select-option value="USD">USD</ion-select-option>
+  </ion-select>
+</ion-item>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-list *ngIf="compras.length > 0">
+    <ion-card *ngFor="let compra of compras" class="compra-card">
+      <ion-card-header>
+        <ion-card-title>Fecha: {{ formatoFecha(compra.f_venta) }}</ion-card-title>
+        <ion-chip color="{{ compra.id_estado === 1 ? 'success' : 'warning' }}">
+          <ion-label>{{ obtenerEstadoTexto(compra.id_estado) }}</ion-label>
+        </ion-chip>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <p><strong>Total:</strong> ${{ formatoPrecio(compra.total) }}</p>
+        <p><strong>Dirección:</strong> {{ compra.direccion }}</p>
+        <p><strong>Comuna:</strong> {{ compra.comuna }}</p>
+        <p><strong>Incluye Instalación:</strong> {{ compra.incluir_instalacion ? 'Sí' : 'No' }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-item *ngIf="compras.length === 0">
+    <ion-label>No tienes compras en tu historial.</ion-label>
+  </ion-item>
+</ion-content>
